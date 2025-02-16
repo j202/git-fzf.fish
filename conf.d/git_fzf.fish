@@ -23,7 +23,7 @@ abbr --add gcl --position command git clone --recurse-submodules
 # Commit
 abbr --add gc --position command git commit
 abbr --add gcf --position command --function _git_fzf_commit_fixup_hash
-abbr --add gcm --position command --set-cursor=% git commit -m \"%\"
+abbr --add gcm --position command --set-cursor --function _git_fzf_commit_message
 
 # Diff
 abbr --add gd --position command git diff
