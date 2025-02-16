@@ -1,0 +1,21 @@
+version: "0.2"
+language: en-GB
+ignorePaths:
+  - cspell.yml
+overrides:
+  - filename: '**/*.fish'
+    words:
+      - abbr
+    patterns:
+      - name: fish_abbr
+        pattern: '^\s*abbr\s+(-a|--add)\s+(\w+)\s+'
+    ignoreRegExpList:
+      - fish_abbr
+  - filename: '**/*git*'
+    words:
+      - '--abbrev-ref'
+      - difftool
+      - oneline
+words:
+  - color
+  - colors
