@@ -16,12 +16,14 @@ abbr --add gcor --position command git checkout --recurse-submodules
 
 # Clean
 abbr --add gclean --position command git clean --interactive -d
+abbr --add gfclean --position command git clean -dx --force
 
 # Clone
 abbr --add gcl --position command git clone --recurse-submodules
 
 # Commit
 abbr --add gc --position command git commit
+abbr --add gca --position command git commit --amend
 abbr --add gcf --position command --function _git_fzf_commit_fixup_hash
 abbr --add gcm --position command --set-cursor --function _git_fzf_commit_message
 
