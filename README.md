@@ -10,7 +10,7 @@ This plugin requires that the [fzf.fish](https://github.com/PatrickF1/fzf.fish) 
 
 Install with [fisher](https://github.com/jorgebucaran/fisher).
 ```fish
-fisher install j202/git-fzf
+fisher install j202/git-fzf.fish
 ```
 
 # Abbreviations
