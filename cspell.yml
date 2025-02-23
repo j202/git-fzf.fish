@@ -6,6 +6,7 @@ overrides:
   - filename: '**/*.fish'
     words:
       - abbr
+      - psub
     patterns:
       - name: fish_abbr
         pattern: '^\s*abbr\s+(-a|--add)\s+(\w+)\s+'
