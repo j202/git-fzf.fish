@@ -3,20 +3,25 @@ language: en-GB
 ignorePaths:
   - cspell.yml
 overrides:
-  - filename: '**/*.fish'
+  - filename: "**/*.fish"
     words:
       - abbr
       - psub
     patterns:
       - name: fish_abbr
-        pattern: '^\s*abbr\s+(-a|--add)\s+(\w+)\s+'
+        pattern: ^\s*abbr\s+(-a|--add)\s+(\w+)\s+
     ignoreRegExpList:
       - fish_abbr
-  - filename: '**/*git*'
+  - filename: "**/*git*"
     words:
-      - '--abbrev-ref'
+      - --abbrev-ref
       - difftool
       - oneline
 words:
+  - argparse
   - color
   - colors
+  - noremote
+ignoreWords:
+  - brmagenta
+  - brred

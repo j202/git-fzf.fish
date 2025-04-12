@@ -1,5 +1,8 @@
 function _git_fzf_branch_select --description "Search git branches. Return the selected branch name(s)."
 
+    argparse R/noremote -- $argv
+    or return
+
     if not git rev-parse --git-dir >/dev/null 2>&1
         echo '_git_fzf_branch_select: Not in a git repository.' >&2
     else
@@ -35,9 +38,13 @@ function _git_fzf_branch_select --description "Search git branches. Return the s
                 else if builtin string match --quiet "Local" $local_or_remote 
                     set --function --append selected_branches $branch_name
                 else if builtin string match --quiet "Remote" $local_or_remote
-                    set --function --append selected_branches (
-                        builtin string replace --regex '^.*?/(.*)' '$1' $branch_name
-                    )
+                    if set --local --query _flag_noremote
+                        set --function --append selected_branches (
+                            builtin string replace --regex '^.*?/(.*)' '$1' $branch_name
+                        )
+                    else
+                        set --function --append selected_branches $branch_name
+                    end
                 end
             end
             echo (string join ' ' $selected_branches)
