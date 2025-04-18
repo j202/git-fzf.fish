@@ -9,7 +9,7 @@ abbr --add gbD --position command --function _git_fzf_branch_delete_force
 abbr --add gbnm --position command git branch --no-merged
 
 # Checkout
-abbr --add gcb --position command git checkout --branch
+abbr --add gcb --position command git checkout -b
 abbr --add gco --position command --function _git_fzf_checkout_branch
 abbr --add gcoh --position command --function _git_fzf_checkout_hash
 abbr --add gcor --position command git checkout --recurse-submodules
