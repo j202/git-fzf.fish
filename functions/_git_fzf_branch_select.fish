@@ -7,10 +7,8 @@ function _git_fzf_branch_select --description "Search git branches. Return the s
         echo '_git_fzf_branch_select: Not in a git repository.' >&2
     else
         # Ensure the __fish_git_branches function is visible by loading git completions.
-        for dir in $fish_complete_path
-            if test -f $dir/git.fish
-                . $dir/git.fish
-            end
+        if not functions -q __fish_git_branches
+            source $__fish_data_dir/completions/git.fish
         end
 
         set --function git_current_branch (_git_fzf_current_branch)
@@ -33,11 +31,11 @@ function _git_fzf_branch_select --description "Search git branches. Return the s
         if test $status -eq 0
             for line in $selected_branch_lines
                 builtin string match --quiet --regex '^\s*(?<branch_name>.*?)\s*(?<local_or_remote>Local|Remote|Current)\s*$' "$line"
-                if builtin string match --quiet "Current" $local_or_remote
+                if builtin string match --quiet Current $local_or_remote
                     set --function --append selected_branches $branch_name
-                else if builtin string match --quiet "Local" $local_or_remote 
+                else if builtin string match --quiet Local $local_or_remote
                     set --function --append selected_branches $branch_name
-                else if builtin string match --quiet "Remote" $local_or_remote
+                else if builtin string match --quiet Remote $local_or_remote
                     if set --local --query _flag_noremote
                         set --function --append selected_branches (
                             builtin string replace --regex '^.*?/(.*)' '$1' $branch_name
