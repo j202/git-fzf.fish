@@ -21,7 +21,10 @@ words:
   - argparse
   - color
   - colors
+  - gsub
+  - maxw
   - noremote
+  - substr
 ignoreWords:
   - brmagenta
   - brred
