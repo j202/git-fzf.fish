@@ -1,4 +1,4 @@
-function _git_fzf_add_files --description "Search the output of git log and preview commits. Return a git commit --fixup command with the selected hash."
+function _git_fzf_add_files --description "Search the output of git status. Return a git add command with the selected file paths."
     set --function cmd "git add"
     set --function files (_git_fzf_search_status)
     if test -n "$files"

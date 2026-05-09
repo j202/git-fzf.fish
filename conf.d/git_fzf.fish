@@ -1,17 +1,16 @@
 # Add
-abbr --add ga --position command --function _git_fzf_add_files
+abbr --add ga --position command "git add "
 
 # Branch
 abbr --add gb --position command git branch
 abbr --add gba --position command git branch --all
-abbr --add gbd --position command --function _git_fzf_branch_delete
-abbr --add gbD --position command --function _git_fzf_branch_delete_force
+abbr --add gbd --position command "git branch --delete "
+abbr --add gbD --position command "git branch --delete --force "
 abbr --add gbnm --position command git branch --no-merged
 
 # Checkout
 abbr --add gcb --position command git checkout -b
-abbr --add gco --position command --function _git_fzf_checkout_branch
-abbr --add gcoh --position command --function _git_fzf_checkout_hash
+abbr --add gco --position command "git checkout "
 abbr --add gcor --position command git checkout --recurse-submodules
 
 # Clean
@@ -24,7 +23,7 @@ abbr --add gcl --position command git clone --recurse-submodules
 # Commit
 abbr --add gc --position command git commit
 abbr --add gca --position command git commit --amend
-abbr --add gcf --position command --function _git_fzf_commit_fixup_hash
+abbr --add gcf --position command "git commit --fixup "
 abbr --add gcm --position command --set-cursor --function _git_fzf_commit_message
 
 # Diff
@@ -49,9 +48,7 @@ abbr --add gpsup --position command --function _git_fzf_push_set_upstream_origin
 
 # Rebase
 abbr --add grb --position command git rebase
-abbr --add grbb --position command --function _git_fzf_rebase_branch
 abbr --add grbi --position command git rebase --interactive
-abbr --add grbbi --position command --function _git_fzf_rebase_branch_interactive
 
 # Status
 abbr --add gst --position command git status
@@ -59,4 +56,4 @@ abbr --add gss --position command git status --short
 abbr --add gsb --position command git status --short --branch
 
 # Switch
-abbr --add gsw --position command --function _git_fzf_switch_branch
+abbr --add gsw --position command "git switch "
